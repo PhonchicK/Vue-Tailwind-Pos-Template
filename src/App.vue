@@ -95,7 +95,7 @@
           <ShoppingCartItem :title="'jghjgfjh'"/>
         </ul>
         <div v-if="openMenu" class="absolute top-3/5 w-full h-2/5 px-10">
-          <div class="flex bg-gray-300 w-full h-full rounded-t-md p-10 border-x-2 border-t-2 border-orange-300">
+          <div class="flex bg-orange-100 w-full h-full rounded-t-md p-10 border-x-2 border-t-2 border-gray-300" v-bind:class="{'border-b-2': openMenu}">
             <h1>For simple cart process</h1>
           </div>
         </div>
@@ -103,11 +103,23 @@
         
       <!--items list area end-->
       <div class="flex flex-col w-full h-3/6 bg-gray-200">
-        <div @click="toggleMenu" class="h-12 bg-gray-300 mx-10 rounded-b-md text-center border-x-2 border-b-2 border-orange-300">
-          <a>OPEN THE MENU</a>
+        <div @click="toggleMenu" class="h-12 bg-orange-100 mx-10 rounded-b-md text-center border-x-2 border-b-2 border-gray-300">
+          <span>OPEN THE MENU</span>
         </div>
-        <div class="flex flex-col w-full h-full">
-          <h1>TOPLAM FİYAT VS</h1>
+        <div class="flex flex-row w-full h-full my-2">
+          <div class="flex flex-col h-full w-1/2 border-r p-3 border-b-2 border-gray-300 center">
+            <div class="flex h-full">
+              <span class="w-36 text-center">Tax :</span>
+              <span class="w-full">846$</span>
+            </div>
+            <div class="flex h-full">
+              <span class="w-36 text-center">Sub Total :</span>
+              <span class="w-full">158M$</span>
+            </div>
+          </div>
+          <div class="flex flex-col h-full w-1/2 border-l p-3 border-b-2 border-gray-300">
+
+          </div>
         </div>
         <div class="flex flex-row w-full h-auto p-2">
           <button class="w-20 h-20 bg-orange-500 rounded-md p-2 mx-2">
@@ -116,9 +128,14 @@
              <path d="M8 5a3.1 3.1 0 0 0-3.2 3A3.1 3.1 0 0 0 8 11a3.1 3.1 0 0 0 3.2-3A3.1 3.1 0 0 0 8 5zm0 4.75A1.86 1.86 0 0 1 6.05 8 1.86 1.86 0 0 1 8 6.25 1.86 1.86 0 0 1 10 8a1.86 1.86 0 0 1-2 1.75z"></path>
             </svg>
           </button>
-          <button class="w-20 h-20 bg-lime-600 rounded-md p-2">
+          <button class="w-20 h-20 bg-lime-600 rounded-md p-2 mx-2">
             <svg class="fill-gray-200" viewBox="0 0 24 24">
                <path d="M16,6 L20,6 C21.1045695,6 22,6.8954305 22,8 L22,16 C22,17.1045695 21.1045695,18 20,18 L16,18 L16,19.9411765 C16,21.0658573 15.1177541,22 14,22 L4,22 C2.88224586,22 2,21.0658573 2,19.9411765 L2,4.05882353 C2,2.93414267 2.88224586,2 4,2 L14,2 C15.1177541,2 16,2.93414267 16,4.05882353 L16,6 Z M20,11 L16,11 L16,16 L20,16 L20,11 Z M14,19.9411765 L14,4.05882353 C14,4.01396021 13.9868154,4 14,4 L4,4 C4.01318464,4 4,4.01396021 4,4.05882353 L4,19.9411765 C4,19.9860398 4.01318464,20 4,20 L14,20 C13.9868154,20 14,19.9860398 14,19.9411765 Z M5,19 L5,17 L7,17 L7,19 L5,19 Z M8,19 L8,17 L10,17 L10,19 L8,19 Z M11,19 L11,17 L13,17 L13,19 L11,19 Z M5,16 L5,14 L7,14 L7,16 L5,16 Z M8,16 L8,14 L10,14 L10,16 L8,16 Z M11,16 L11,14 L13,14 L13,16 L11,16 Z M13,5 L13,13 L5,13 L5,5 L13,5 Z M7,7 L7,11 L11,11 L11,7 L7,7 Z M20,9 L20,8 L16,8 L16,9 L20,9 Z"></path>
+            </svg>
+          </button>
+          <button class="w-20 h-20 bg-sky-600 rounded-md p-2 mx-2">
+            <svg viewBox="0 0 24 24" class="fill-none stroke-gray-200">
+              <path d="M8 7.00003H4M8 12H4M8 17H4M12 3V21M9.2 21H16.8C17.9201 21 18.4802 21 18.908 20.782C19.2843 20.5903 19.5903 20.2843 19.782 19.908C20 19.4802 20 18.9201 20 17.8V6.20003C20 5.07993 20 4.51987 19.782 4.09205C19.5903 3.71573 19.2843 3.40977 18.908 3.21802C18.4802 3.00003 17.9201 3.00003 16.8 3.00003H9.2C8.07989 3.00003 7.51984 3.00003 7.09202 3.21802C6.71569 3.40977 6.40973 3.71573 6.21799 4.09205C6 4.51987 6 5.07993 6 6.20003V17.8C6 18.9201 6 19.4802 6.21799 19.908C6.40973 20.2843 6.71569 20.5903 7.09202 20.782C7.51984 21 8.07989 21 9.2 21Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           </button>
         </div>
