@@ -11,7 +11,7 @@
         },
         methods: {
             toggleOpen() {
-                if(event.target.tagName === "INPUT")
+                if(event.target.tagName === "INPUT" || event.target.closest('button'))
                 {
                     return;
                 }
@@ -30,9 +30,9 @@
             <svg viewBox="0 0 20 34" class="w-8 h-8 stroke-gray-400" v-if="isOpen">
                  <path d="M12 18L7 13M12 18L17 13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> 
             </svg>
-            <span class="pl-3 -mt-0.5">50</span>
+            <span class="pl-3 -mt-0.5 font-semibold">50</span>
             <div class="flex flex-col ml-3 -mt-0.5 w-full">
-                <h2 class="text-slate-900">{{ title }}</h2>
+                <h2 class="text-slate-900 font-semibold">{{ title }}</h2>
                 <h3 class="text-gray-400 text-sm">Renk</h3>
             </div>
             <div class="w-2/6 h-full text-center flex flex-col">
